@@ -154,6 +154,8 @@ const SignFlow: React.FC = () => {
   };
 
   useEffect(() => {
+    // Don't initialize until the welcome screen is dismissed and DOM refs are available
+    if (showWelcome) return;
     if (!videoRef.current || !canvasRef.current || !containerRef.current) return;
 
     const video = videoRef.current;
@@ -170,13 +172,17 @@ const SignFlow: React.FC = () => {
     const blurCanvas = document.createElement('canvas');
     const blurCtx = blurCanvas.getContext('2d');
 
+    // Reset loading state for fresh initialization
+    setLoading(true);
+    setCameraError(null);
+
     // Safety timeout for loading state
     const loadingTimeout = setTimeout(() => {
-      if (loading) {
+      if (!isDestroyed) {
         setLoading(false);
-        if (!cameraError && handsDetectedCount === 0) {
+        //if (!cameraError && handsDetectedCount === 0) {
           console.warn("Initialization timeout reached");
-        }
+        //}
       }
     }, 15000); // 15 seconds safety timeout
 
@@ -307,7 +313,7 @@ const SignFlow: React.FC = () => {
         selfieSegmentation.close();
       }
     };
-  }, []);
+  }, [showWelcome]);
 
   const t = {
     en: {
