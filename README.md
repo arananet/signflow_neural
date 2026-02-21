@@ -1,20 +1,38 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+
+# SignFlow — Interactive Sign Language Learning
+
+**Master American Sign Language with real-time AI feedback powered by MediaPipe and Gemini.**
+
 </div>
 
-# Run and deploy your AI Studio app
+## About
 
-This contains everything you need to run your app locally.
+SignFlow is a proof of concept interactive web application that teaches American Sign Language (ASL) using your webcam. It uses MediaPipe for real-time hand tracking and selfie segmentation, combined with Google's Gemini AI to validate your gestures and provide instant feedback.
 
-View your app in AI Studio: https://ai.studio/apps/7154c2cc-9a2c-4790-8af9-002f0c88a6da
+### Features
+
+- **Real-time hand tracking** — MediaPipe detects and draws hand landmarks on a live camera feed
+- **AI gesture validation** — Gemini analyzes your signs and gives feedback with confidence scores
+- **Background blur** — Selfie segmentation keeps focus on you with adjustable blur
+- **Lesson mode** — Step through alphabet letters and common signs
+- **Name Game mode** — Spell your name letter by letter in ASL
+- **Bilingual** — Full English and Spanish support
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
-
+**Prerequisites:** Node.js
 
 1. Install dependencies:
-   `npm install`
+   ```
+   npm install
+   ```
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
-   `npm run dev`
+   ```
+   npm run dev
+   ```
+
+## Developer
+
+**Eduardo Arana** — 2026
