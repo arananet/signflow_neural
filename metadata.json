@@ -1,0 +1,7 @@
+{
+  "name": "SignFlow: Real-Time ASL Learning via Computer Vision",
+  "description": "SignFlow is an interactive PoC designed to bridge the gap between static tutorials and fluent signing. Using your webcam to track hand landmarks in real-time, it validates your gestures and providing instant feedback to ensure your form is accurate.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
